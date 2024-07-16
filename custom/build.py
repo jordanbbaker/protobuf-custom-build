@@ -17,4 +17,4 @@ class Command(setuptools.Command):
             return
 
         log.info(f"Compiling protos in {os.path.commonpath(all_protos)}...")
-        subprocess.run(['protoc', '--python_out=.'] + all_protos, check=True)
+        subprocess.run(['protoc', '--python_out=.', '--pyi_out=.'] + all_protos, check=True)
